@@ -1,0 +1,5 @@
+{
+    "editor.suggest.selectionMode": "whenQuickSuggestion",
+    "emmet.useInlineCompletions": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": true
+}
