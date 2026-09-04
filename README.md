@@ -22,6 +22,8 @@ This project collection is designed for hands-on React practice. Each folder is 
 | `03tailwindprops` | React + Vite + Tailwind | Styling with Tailwind and reusable props |
 | `04bgchanger` | React + Vite | Dynamic background color switching |
 | `05passwordGenerator` | React + Vite | Password generator with customization controls |
+| `07reactrouter` | React + Vite | Client-side routing and multi-page navigation |
+| `currencyConverter` | React + Vite + Tailwind | Currency conversion using live exchange rates |
 | `customreact` | Vanilla JS + custom React concepts | Understanding how React works under the hood |
 
 ## Prerequisites
@@ -72,7 +74,9 @@ The projects move from simple setup to more interactive frontend logic:
 4. Props and reusable UI components
 5. Styling with Tailwind
 6. Small utility app creation
-7. React internals and custom implementation
+7. Client-side routing
+8. API-backed utility app creation
+9. React internals and custom implementation
 
 ## Repository structure
 
@@ -84,6 +88,8 @@ react-journey/
 ├── 03tailwindprops/
 ├── 04bgchanger/
 ├── 05passwordGenerator/
+├── 07reactrouter/
+├── currencyConverter/
 ├── customreact/
 ├── README.md
 ├── package.json
