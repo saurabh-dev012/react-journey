@@ -34,6 +34,7 @@ This repository is a collection of mini projects created while learning React, V
 | `04bgchanger` | React + Vite | Dynamic background color switching |
 | `05passwordGenerator` | React + Vite | Password generator with controls |
 | `currencyConverter` | React + Vite + Tailwind | Currency converter with conversion logic |
+| `gallery-project` | React + Vite + Tailwind | Image gallery app with dynamic fetches and card-based UI |
 | `form-handling` | React + Vite | Controlled form inputs and handling |
 | `notes-app` | React + Vite + Tailwind | Notes app with add and delete note functionality |
 | `customreact` | Vanilla JS + React internals | Understanding custom React behavior |
@@ -81,6 +82,7 @@ react-journey/
 ├── currencyConverter/
 ├── customreact/
 ├── form-handling/
+├── gallery-project/
 ├── notes-app/
 ├── .gitignore
 ├── README.md
