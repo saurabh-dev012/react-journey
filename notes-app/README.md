@@ -1,16 +1,36 @@
-# React + Vite
+# Notes App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A simple React + Vite notes application for creating and deleting notes with a clean sticky-note style UI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Add a note with a title and details
+- Delete notes individually
+- Responsive layout for desktop and smaller screens
+- Built with React state management
+- Styled using Tailwind CSS
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Tailwind CSS
 
-## Expanding the Oxlint configuration
+## Getting started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm install
+npm run dev
+```
+
+Then open the local URL shown in the terminal.
+
+## Project purpose
+
+This app is part of the wider React learning journey and demonstrates: 
+
+- controlled inputs
+- state updates
+- array rendering
+- UI building with reusable card-like layouts
+- event-based interaction patterns
