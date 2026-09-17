@@ -3,16 +3,21 @@ import { fetchMedia } from '../api/mediaApi'
 
 export const loadMedia = createAsyncThunk(
   'media/fetchMedia',
-  async (_, { rejectWithValue }) => {
+  async ({ type = 'photos', query = 'nature' }, { rejectWithValue }) => {
     try {
-      return await fetchMedia()
+      const items = await fetchMedia(type, query)
+      return { type, query, items }
     } catch (error) {
-      return rejectWithValue(error.message)
+      return rejectWithValue(
+        error.response?.data?.error || error.message || 'Something went wrong',
+      )
     }
   },
 )
 
 const initialState = {
+  query: 'nature',
+  type: 'photos',
   items: [],
   status: 'idle',
   error: null,
@@ -21,7 +26,14 @@ const initialState = {
 const mediaSlice = createSlice({
   name: 'media',
   initialState,
-  reducers: {},
+  reducers: {
+    setQuery: (state, action) => {
+      state.query = action.payload
+    },
+    setType: (state, action) => {
+      state.type = action.payload
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loadMedia.pending, (state) => {
@@ -30,7 +42,9 @@ const mediaSlice = createSlice({
       })
       .addCase(loadMedia.fulfilled, (state, action) => {
         state.status = 'succeeded'
-        state.items = action.payload
+        state.query = action.payload.query
+        state.type = action.payload.type
+        state.items = action.payload.items
       })
       .addCase(loadMedia.rejected, (state, action) => {
         state.status = 'failed'
@@ -39,4 +53,5 @@ const mediaSlice = createSlice({
   },
 })
 
+export const { setQuery, setType } = mediaSlice.actions
 export default mediaSlice.reducer

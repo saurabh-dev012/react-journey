@@ -1,27 +1,42 @@
-import React from 'react'
-import { fetchPhotos, fetchVideos } from './api/mediaApi'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { loadMedia, setQuery, setType } from './features/mediaSlice'
+import CollectionPage from './pages/CollectionPage'
 
 const App = () => {
-  const getPhotos = async () => {
-    const data = await fetchPhotos('cat')
-    console.log(data)
+  const dispatch = useDispatch()
+  const { type, query, status, items, error } = useSelector((state) => state.media)
+  const [searchTerm, setSearchTerm] = useState(query)
+
+  useEffect(() => {
+    dispatch(loadMedia({ type: 'photos', query: 'nature' }))
+  }, [dispatch])
+
+  const handleSearch = (event) => {
+    event.preventDefault()
+    const trimmed = searchTerm.trim() || 'nature'
+    dispatch(setQuery(trimmed))
+    dispatch(loadMedia({ type, query: trimmed }))
   }
 
-  const getVideos = async () => {
-    const data = await fetchVideos('cat')
-    console.log(data)
+  const handleTypeChange = (nextType) => {
+    const trimmed = searchTerm.trim() || query || 'nature'
+    dispatch(setType(nextType))
+    dispatch(loadMedia({ type: nextType, query: trimmed }))
   }
 
   return (
-    <div className="h-screen text-white w-full bg-gray-950">
-      <button className="bg-green-400 px-4 py-2 m-5" onClick={getPhotos}>
-        Get Photos
-      </button>
-
-      <button className="bg-green-400 px-4 py-2 m-5" onClick={getVideos}>
-        Get Videos
-      </button>
-    </div>
+    <CollectionPage
+      type={type}
+      query={query}
+      status={status}
+      items={items}
+      error={error}
+      searchTerm={searchTerm}
+      setSearchTerm={setSearchTerm}
+      onSearch={handleSearch}
+      onTypeChange={handleTypeChange}
+    />
   )
 }
 
