@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #f6f8fa 0%, #eef4ff 100%);
+  color: #1f2937;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  background: #111827;
+  color: white;
+  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.15);
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.98rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #7dd3fc;
+}
+
+.home {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  padding: 48px 32px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  margin: 0 0 14px;
+  color: #0f172a;
+}
+
+.hero p {
+  margin: 0;
+  color: #475569;
+  font-size: 1.05rem;
+}
+
+.search-box {
+  display: flex;
+  margin-top: 28px;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-box input {
+  width: min(420px, 80vw);
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-box input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.15);
+}
+
+.search-box button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-box button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.25);
+}
+
+.example {
+  margin-top: 18px;
+  color: #334155;
+}
+
+.example span {
+  font-weight: 700;
+  color: #1d4ed8;
+}

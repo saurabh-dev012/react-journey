@@ -1,11 +1,20 @@
-import React from 'react'
+import SearchBar from "../components/SearchBar";
 
-const Home = () => {
+function Home() {
   return (
-    <div>
-      
-    </div>
-  )
+    <main className="home">
+      <section className="hero">
+        <h1>GitHub Explorer</h1>
+        <p>Explore GitHub profiles and repositories</p>
+
+        <SearchBar />
+
+        <p className="example">
+          Try: <span>octocat</span>
+        </p>
+      </section>
+    </main>
+  );
 }
 
-export default Home
+export default Home;
