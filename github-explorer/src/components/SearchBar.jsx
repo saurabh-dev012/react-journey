@@ -9,21 +9,35 @@ function SearchBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!username.trim()) return;
+    const trimmedUsername =
+      username.trim();
 
-    navigate(`/user/${username}`);
+    if (!trimmedUsername) {
+      return;
+    }
+
+    navigate(
+      /user/${trimmedUsername}
+    );
   };
 
   return (
-    <form className="search-box" onSubmit={handleSubmit}>
+    <form
+      className="search-box"
+      onSubmit={handleSubmit}
+    >
       <input
         type="text"
+        placeholder="Enter GitHub username..."
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder="Enter GitHub username"
+        onChange={(e) =>
+          setUsername(e.target.value)
+        }
       />
 
-      <button type="submit">Search</button>
+      <button type="submit">
+        Search
+      </button>
     </form>
   );
 }

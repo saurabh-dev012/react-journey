@@ -1,18 +1,48 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
+
 import Home from "./pages/Home";
-import UserProfile from "./pages/UserProfile";
+import User from "./pages/User";
+import Compare from "./pages/Compare";
+import Favourites from "./pages/Favourites";
+import RepoDetails from "./pages/RepoDetails";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/user/:username" element={<UserProfile />} />
+
+        <Route
+          path="/user/:username"
+          element={<User />}
+        />
+
+        <Route
+          path="/user/:username/repo/:repoName"
+          element={<RepoDetails />}
+        />
+
+        <Route
+          path="/compare"
+          element={<Compare />}
+        />
+
+        <Route
+          path="/favourites"
+          element={<Favourites />}
+        />
+
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
