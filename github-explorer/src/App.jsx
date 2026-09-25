@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
-import User from "./pages/User";
+import User from "./pages/UserProfile";
 import Compare from "./pages/Compare";
 import Favourites from "./pages/Favourites";
 import RepoDetails from "./pages/RepoDetails";

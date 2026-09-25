@@ -71,7 +71,7 @@ function User() {
 
         const userResponse =
           await fetch(
-            https://api.github.com/users/${username}
+            `https://api.github.com/users/${username}`
           );
 
         if (!userResponse.ok) {
@@ -89,7 +89,7 @@ function User() {
 
         const repoResponse =
           await fetch(
-            https://api.github.com/users/${username}/repos?per_page=100
+            `https://api.github.com/users/${username}/repos?per_page=100`
           );
 
         if (!repoResponse.ok) {

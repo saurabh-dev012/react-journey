@@ -17,7 +17,7 @@ function SearchBar() {
     }
 
     navigate(
-      /user/${trimmedUsername}
+      `/user/${trimmedUsername}`
     );
   };
 

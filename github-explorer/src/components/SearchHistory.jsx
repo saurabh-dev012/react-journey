@@ -48,7 +48,7 @@ function SearchHistory() {
             key={username}
             onClick={() =>
               navigate(
-                /user/${username}
+                `/user/${username}`
               )
             }
           >

@@ -30,7 +30,7 @@ function RepoDetails() {
 
         const response =
           await fetch(
-            https://api.github.com/repos/${username}/${repoName}
+            `https://api.github.com/repos/${username}/${repoName}`
           );
 
         if (!response.ok) {

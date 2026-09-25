@@ -35,7 +35,7 @@ function RepoCard({
       <div className="repo-actions">
 
         <Link
-          to={/user/${username}/repo/${repo.name}}
+          to={`/user/${username}/repo/${repo.name}`}
         >
           Details
         </Link>
